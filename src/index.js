@@ -1,7 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Triangle from './triangle.js';
+import Journal from './journal.js';
 
 function handleTriangleForm(event) {
   event.preventDefault();
@@ -9,13 +9,13 @@ function handleTriangleForm(event) {
   const length2 = parseInt(document.querySelector('#length2').value);
   const length1 = parseInt(document.querySelector('#length1').value);
   const length3 = parseInt(document.querySelector('#length3').value);
-  const triangle = new Triangle(length1, length2, length3);
-  const response = triangle.checkType();
+  const journal = new Journal(length1, length2, length3);
+  const response = journal.checkType();
   const pTag = document.createElement("p");
   pTag.append(response);
   document.querySelector('#response').append(pTag);
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#triangle-checker-form").addEventListener("submit", handleTriangleForm);
+  document.querySelector("#journal").addEventListener("submit", handleTriangleForm);
 });

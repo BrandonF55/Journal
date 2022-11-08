@@ -1,9 +1,32 @@
-export default function Journal(side1, side2, side3) {
-  this.side1 = side1;
-  this.side2 = side2;
-  this.side3 = side3;
+function Journal(entrys, words) {
+  this.entrys = entrys;
+  this.words = words;
 }
 
-Journal.prototype.checkType = function() {
-  return "I can't answer that yet!";
-};
+
+
+
+
+// let wordCount = 0;
+// const countArray = text.trim().split(' ');
+// countArray.foreach(function(element){
+//   if (!numbers(element)) {
+// } wordCount++;
+//   }
+
+
+
+Entry.prototype.numbersOfWords = function () {
+  let try1 = document.getElementById("body").innertext;
+  this.words = try1.split(' ').length;
+  console.log(this.words);
+  return this.words;
+
+}
+
+
+function Entry(title, paraG) {
+  this.title = title;
+  this.paraG = paraG;
+}
+

@@ -1,21 +1,27 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Journal from './journal.js';
 
-function handleTriangleForm(event) {
+
+function handleJournal(event) {
   event.preventDefault();
-  document.querySelector('#response').innerText = null;
-  const length2 = parseInt(document.querySelector('#length2').value);
-  const length1 = parseInt(document.querySelector('#length1').value);
-  const length3 = parseInt(document.querySelector('#length3').value);
-  const journal = new Journal(length1, length2, length3);
-  const response = journal.checkType();
-  const pTag = document.createElement("p");
-  pTag.append(response);
-  document.querySelector('#response').append(pTag);
+
+  let title = document.querySelector("input#title").value;
+  let heading = document.getElementById('heading');
+  heading.innerHTML = title;
+  //document.getElementById("heading").innerHTML = title;
+
+  let entry = document.querySelector("input#entry").value;
+  let body = document.getElementById('body');
+  body.innerHTML = entry;
+
 }
 
-window.addEventListener("load", function() {
-  document.querySelector("#journal").addEventListener("submit", handleTriangleForm);
+
+window.addEventListener("load", function () {
+  const form = document.getElementById('journal');
+  form.addEventListener("submit", handleJournal);
+  //document.querySelector("input#title").addEventListener("submit", handlejournal);
+
 });
+
